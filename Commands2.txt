@@ -1,0 +1,8 @@
+ ffmpeg -i BBB_160X120_vp8.webm -i BBB_160X120_vp9.webm -i BBB_160X120_h265.mp4 -i BBB_160X120_av1.mkv -filter_complex "[0:v][1:v]hstack[top]; [2:v][3:v]hstack[bottom];[top][bottom]vstack,format=yuv420p[v];[0:a][1:a][2:a][3:a]amerge=inputs=4[a]" -map "[v]" -map "[a]" -ac 2 output_160X120.mp4
+
+ffmpeg -i BBB_320X240_vp8.webm -i BBB_320X240_vp9.webm -i BBB_320X240_h265.mp4 -i BBB_320X240_av1.mkv -filter_complex "[0:v][1:v]hstack[top]; [2:v][3:v]hstack[bottom];[top][bottom]vstack,format=yuv420p[v];[0:a][1:a][2:a][3:a]amerge=inputs=4[a]" -map "[v]" -map "[a]" -ac 2 output_320X240.mp4
+
+ffmpeg -i BBB_480p_vp8.webm -i BBB_480p_vp9.webm -i BBB_480p_h265.mp4 -i BBB_480p_av1.mkv -filter_complex "[0:v][1:v]hstack[top]; [2:v][3:v]hstack[bottom];[top][bottom]vstack,format=yuv420p[v];[0:a][1:a][2:a][3:a]amerge=inputs=4[a]" -map "[v]" -map "[a]" -ac 2 output_480p.mp4  
+             
+ ffmpeg -i BBB_720p_vp8.webm -i BBB_720p_vp9.webm -i BBB_720p_h265.mp4 -i BBB_720p_av1.mkv -filter_complex "[0:v][1:v]hstack[top]; [2:v][3:v]hstack[bottom];[top][bottom]vstack,format=yuv420p[v];[0:a][1:a][2:a][3:a]amerge=inputs=4[a]" -map "[v]" -map "[a]" -ac 2 output_720p.mp4               
+
